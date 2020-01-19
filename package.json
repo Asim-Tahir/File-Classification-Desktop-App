@@ -1,11 +1,17 @@
 {
-  "name": "file-classification-electron-vue",
+  "name": "file-classification",
+  "displayName": "File Classification App",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "electron:serve": "vue-cli-service electron:serve",
+    "electron:build": "vue-cli-service electron:build",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
   },
+  "main": "background.js",
   "dependencies": {
     "core-js": "^3.4.4",
     "register-service-worker": "^1.6.2",
@@ -19,6 +25,8 @@
     "@vue/cli-plugin-router": "^4.1.0",
     "@vue/cli-plugin-vuex": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
+    "electron": "^5.0.0",
+    "vue-cli-plugin-electron-builder": "^1.4.4",
     "vue-template-compiler": "^2.6.10"
   }
 }
